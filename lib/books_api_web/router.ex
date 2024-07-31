@@ -7,6 +7,11 @@ defmodule BooksApiWeb.Router do
 
   scope "/api", BooksApiWeb do
     pipe_through :api
+
+    # authors
+    get "/authors", AuthorController, :index
+    get "/authors/:id", AuthorController, :show
+    post "/authors", AuthorController, :create
   end
 
   # Enable LiveDashboard in development
