@@ -1,4 +1,4 @@
-defmodule BooksApiWeb.AuthorControllerTest do
+defmodule BooksApiWeb.GenreControllerTest do
   use BooksApiWeb.ConnCase
 
   @create_attrs %{
@@ -11,18 +11,18 @@ defmodule BooksApiWeb.AuthorControllerTest do
   end
 
   describe "index" do
-    test "lists all authors", %{conn: conn} do
-      conn = get(conn, ~p"/api/authors")
+    test "lists all genres", %{conn: conn} do
+      conn = get(conn, ~p"/api/genres")
       assert json_response(conn, 200) == []
     end
   end
 
-  describe "create author" do
-    test "renders author when data is valid", %{conn: conn} do
-      conn = post(conn, ~p"/api/authors", author: @create_attrs)
+  describe "create genre" do
+    test "renders genre when data is valid", %{conn: conn} do
+      conn = post(conn, ~p"/api/genres", @create_attrs)
       assert %{"id" => id} = json_response(conn, 201)
 
-      conn = get(conn, ~p"/api/authors/#{id}")
+      conn = get(conn, ~p"/api/genres/#{id}")
 
       assert %{
                "id" => ^id,
@@ -31,7 +31,7 @@ defmodule BooksApiWeb.AuthorControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
-      conn = post(conn, ~p"/api/authors", author: @invalid_attrs)
+      conn = post(conn, ~p"/api/genres", genre: @invalid_attrs)
       assert json_response(conn, 422)["errors"] != %{}
     end
   end

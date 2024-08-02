@@ -12,6 +12,11 @@ defmodule BooksApiWeb.Router do
     get "/authors", AuthorController, :index
     get "/authors/:id", AuthorController, :show
     post "/authors", AuthorController, :create
+
+    # genres
+    get "/genres", GenreController, :index
+    get "/genres/:id", GenreController, :show
+    post "/genres", GenreController, :create
   end
 
   # Enable LiveDashboard in development
