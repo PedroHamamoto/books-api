@@ -34,7 +34,7 @@ defmodule BooksApiWeb.BookControllerTest do
         genre: genre_id
       }
 
-      conn = post(conn, ~p"/api/books", book: book)
+      conn = post(conn, ~p"/api/books", book)
 
       assert %{"id" => id} = json_response(conn, 201)
 

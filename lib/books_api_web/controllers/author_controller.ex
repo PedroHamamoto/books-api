@@ -11,7 +11,7 @@ defmodule BooksApiWeb.AuthorController do
     render(conn, :index, authors: authors)
   end
 
-  def create(conn, %{"author" => author_params}) do
+  def create(conn, author_params) do
     with {:ok, %Author{} = author} <- Authors.create_author(author_params) do
       conn
       |> put_status(:created)
