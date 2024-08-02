@@ -3,7 +3,7 @@ defmodule BooksApi.Repo.Migrations.CreateAuthors do
 
   def change do
     create table(:authors) do
-      add :name, :string
+      add :name, :string, null: false
 
       timestamps(type: :utc_datetime)
     end

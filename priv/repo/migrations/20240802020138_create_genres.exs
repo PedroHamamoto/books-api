@@ -3,7 +3,7 @@ defmodule BooksApi.Repo.Migrations.CreateGenres do
 
   def change do
     create table(:genres) do
-      add :name, :string
+      add :name, :string, null: false
 
       timestamps(type: :utc_datetime)
     end
